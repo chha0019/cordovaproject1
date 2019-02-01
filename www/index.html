@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * 'self' * data: content:; connect-src *;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="./vendor/tinyshell/css/tinyshell.min.css">
+    <script type="text/javascript" src="./vendor/tinyshell/js/tinyshell.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>ReviewR</title>
+</head>
+
+<body>
+   <div id="headeradd" class="page active" >
+            <h1 class="t2">ReviewR</h1>
+            <span id="add" class="right-button">Add</span>
+    </div>
+    <div id="list-page" class="page">
+        <section id="list">
+        </section>
+    </div>
+
+    <div id="add-page" class="page">
+            <span id="cancel" class="left-button">Cancel</span>
+            <span id="save" class="right-button">Save</span>
+        <section>
+            <form>
+                <p>
+                    <input type="text" id="js-desc" required/>
+                    <label for="desc">Title</label>
+                </p>
+                <div class="stars form-row" data-rating="0">
+                    <label class="center">Rating</label>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                </div>
+                <p class="form-row buttons">
+                    <input type="button" id="js-picture" value="Take Picture" />
+                    <img src="" id="img" class="round center" />
+                </p>
+            </form>
+        </section>
+    </div>
+
+    <div id="detail-page" class="page">
+        <header class="bar top">
+            <h1 class="t2">Details</h1>
+            <span id="back" class="left-button">Back</span>
+            <span id="delete" class="right-button">Delete</span>
+        </header>
+        <section id="detail" >
+
+        </section>
+    </div>
+
+    <div class='overlay-bars'>
+        <section class="message">
+            <h1 class="info t3"></h1>
+        </section>
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
